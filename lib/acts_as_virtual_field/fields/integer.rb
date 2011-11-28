@@ -1,16 +1,8 @@
-module Fields
-  class Integer < Base
-    REGEXP = /^[+-]?\d+$/
-    
-    def set_value
-      @value = @match[0].to_i
+module ActsAsVirtualField
+  module VirtualField 
+    class Integer < Base
+      LABEL = 'Integer'
+      VIEW_AS = :numeric
     end
-    
-    def self.to_formtastic(*args)
-      options = args.extract_options!
-      options.merge!(:as => :numeric)
-      options
-    end
-    
   end
 end

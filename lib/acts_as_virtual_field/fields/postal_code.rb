@@ -1,5 +1,7 @@
 module ActsAsVirtualField
-  class PostalCode < Base
-    REGEXP = /^\d{5}$/
+  module VirtualField
+    class PostalCode < Base
+      LABEL = 'Postal Code'
+    end
   end
 end

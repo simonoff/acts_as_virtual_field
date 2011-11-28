@@ -1,3 +1,7 @@
 module ActsAsVirtualField
-  class String < Base; end
+  module VirtualField
+    class String < Base
+      LABEL = 'String'
+    end
+  end
 end

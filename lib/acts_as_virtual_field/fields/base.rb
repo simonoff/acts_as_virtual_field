@@ -2,16 +2,25 @@ module ActsAsVirtualField
   module VirtualField
     class Base
       class << self
+                        
         def view_as
-          self.class.VIEW_AS || :string
+          self::VIEW_AS || :string
         end
       
         def has_html_options?
-          self.class.HTML_OPTIONS || false
+          self::HTML_OPTIONS || false
         end
       
         def html_options
-          self.class.HTML_OPTIONS
+          self::HTML_OPTIONS
+        end
+        
+        def label
+          self::LABEL || ''
+        end
+        
+        def collection?
+          false
         end
       end
     end
