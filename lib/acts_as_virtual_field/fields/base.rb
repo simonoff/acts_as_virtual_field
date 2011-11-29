@@ -4,11 +4,11 @@ module ActsAsVirtualField
       class << self
                         
         def view_as
-          self::VIEW_AS || :string
+          self::VIEW_AS rescue :string
         end
       
         def has_html_options?
-          self::HTML_OPTIONS || false
+          self::HTML_OPTIONS rescue false
         end
       
         def html_options
@@ -16,7 +16,7 @@ module ActsAsVirtualField
         end
         
         def label
-          self::LABEL || ''
+          self::LABEL rescue ''
         end
         
         def collection?

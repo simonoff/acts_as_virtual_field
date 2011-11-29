@@ -22,7 +22,7 @@ module ActsAsVirtualField
 
     def types
       (self.constants - self.excludes).map do |submodule|
-        [submodule.to_s, self.const_get(submodule)::LABEL.to_s]
+        [self.const_get(submodule)::LABEL.to_s, submodule.to_s]
       end
     end
     
